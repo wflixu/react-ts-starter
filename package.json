@@ -8,11 +8,13 @@
     "test": "node scripts/test.js"
   },
   "dependencies": {
+    "connected-react-router": "^6.4.0",
     "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "redux": "^4.0.1"
   },
   "devDependencies": {
@@ -25,8 +27,10 @@
     "@types/node": "12.0.2",
     "@types/react": "16.8.18",
     "@types/react-dom": "16.8.4",
+    "@types/react-hot-loader": "^4.1.0",
     "@types/react-redux": "^7.0.9",
     "@types/react-router": "^5.0.1",
+    "@types/react-router-dom": "^4.3.3",
     "@types/redux-actions": "^2.6.1",
     "@types/webpack": "^4.4.32",
     "@types/webpack-env": "^1.13.9",
@@ -69,6 +73,7 @@
     "postcss-safe-parser": "4.0.1",
     "react-app-polyfill": "^1.0.1",
     "react-dev-utils": "^9.0.1",
+    "react-hot-loader": "^4.8.8",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
@@ -140,11 +145,6 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
     ]
   }
 }
