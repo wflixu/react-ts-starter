@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Dispatch } from 'redux'
+import React from 'react'
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux'
 import { RouteComponentProps } from 'react-router'
 import { increment, decrement } from '../actions/counter'
@@ -28,10 +28,7 @@ const mapStateToProps = (state: State) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   increment: () => dispatch(increment()),
-  // tslint:disable-next-line:object-literal-sort-keys
   decrement: () => dispatch(decrement()),
 })
 
-// tslint:disable-next-line:max-line-length
-// tslint:disable-next-line:max-line-length
-export default connect<StateProps, DispatchProps, RouteComponentProps<any>>(mapStateToProps as any, mapDispatchToProps)(Counter);
+export default connect<StateProps, DispatchProps, RouteComponentProps<any>>(mapStateToProps, mapDispatchToProps)(Counter)
