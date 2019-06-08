@@ -33,3 +33,5 @@ yarn add webpack webpack-cli webpack-dev-server  ts-loader --dev
 npm i typescript tslint @types/react @types/react-dom tslint-react tslint-config-prettier webpack webpack-cli webpack-dev-server  ts-loader  -D
 
 npm i  react react-dom -S
+
+npm i css-loader style-loader less-loader less html-webpack-plugin clean-webpack-plugin -D
