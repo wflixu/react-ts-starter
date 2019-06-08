@@ -23,3 +23,13 @@ yarn add redux react-redux  react-router
 
 yarn add @types/history @types/react-redux  @types/react-router @types/redux-actions @types/webpack @types/webpack-env -D
 
+yarn add typescript tslint @types/react @types/react-dom  --dev
+
+yarn add react react-dom
+yarn add tslint-react tslint-config-prettier --dev
+
+yarn add webpack webpack-cli webpack-dev-server  ts-loader --dev
+
+npm i typescript tslint @types/react @types/react-dom tslint-react tslint-config-prettier webpack webpack-cli webpack-dev-server  ts-loader  -D
+
+npm i  react react-dom -S

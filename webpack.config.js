@@ -1,38 +1,27 @@
-const path = require('path')
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'eval-source-map',
-  entry: [
-    'react-hot-loader/patch',
-    path.resolve('src/index.tsx'),
-  ],
-  resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
-  },
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-    contentBase:'./dist'
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?/,
-        loader: 'ts-loader'
-      }
-    ],
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template:'./public/index.html'
-    })
-  ],
+    entry: './src/index.tsx',
+    module: {
+        rules: [
+           {
+               test: /\.tsx?$/,
+               use:'ts-loader',
+               exclude:/node_modules/,
+           }
+        ]
+    },
+    output:{
+        path:path.resolve(__dirname,'dist'),
+        filename:'bundle.js'
+    },
+    devServer:{
+       contentBase: path.resolve(__dirname,'dist'),
+       compress:true,
+       open:true,
+       port:9000
+    },
+    resolve:{
+        extensions:['.tsx','.ts','.js']
+    }
 }

@@ -1,14 +1,18 @@
 {
-    "defaultSeverity": "warn",
+    "defaultSeverity": "error",
     "extends": [
-        "tslint:recommended"
+        "tslint:recommended",
+        "tslint-react",
+        "tslint-config-prettier"
     ],
+    "linterOptions": {
+        "exclude": ["node_modules/**/*ts"]
+    },
     "jsRules": {},
     "rules": {
-        "quotemark": [true, "single", "jsx-double"],
-        "interface-name": [true, "never-prefix"],
-        "semicolon": [false, "always"],
-        "ordered-imports": false
+        "no-console":false,
+        "ordered-imports":false,
+        "object-literal-sort-keys":false,
     },
     "rulesDirectory": []
 }
