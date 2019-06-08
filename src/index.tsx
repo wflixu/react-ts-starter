@@ -71,22 +71,19 @@ class App extends React.Component<{}, IState> {
     public componentWillUnmount() {
         clearInterval(this.timer)
     }
-    public static getDerivedStateFromProps(props: {}, state: IState) {
-        console.log("getDerivedStateFromProps", props, state); return null;
-    }
     public render() {
         return (<div className="app">
             <p>{this.state.confirmMessage}</p>
             {this.state.confirmVisible && (<button onClick={this.handleConfirmClick}>confirm</button>)}
-
-            <Confirm
+            {this.state.countDown>0&&     <Confirm
                 open={this.state.confirmOpen}
                 title="react and typescirpt"
                 content={this.state.confirmMessage}
                 cancelCaption="取消"
                 onOkClick={this.handleConfirmOkClick}
                 onCancelClick={this.handleConfirmCancelClick}
-            />
+            />}
+        
         </div>);
     }
 }
