@@ -35,3 +35,10 @@ npm i typescript tslint @types/react @types/react-dom tslint-react tslint-config
 npm i  react react-dom -S
 
 npm i css-loader style-loader less-loader less html-webpack-plugin clean-webpack-plugin -D
+
+## Router
+
+npm i @types/react-router-dom -D
+
+##URLSearchParams
+npm i url-search-params-polyfill -D
