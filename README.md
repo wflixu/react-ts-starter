@@ -42,3 +42,9 @@ npm i @types/react-router-dom -D
 
 ##URLSearchParams
 npm i url-search-params-polyfill -D
+
+## animated transitions
+
+npm i react-transition-group -S
+
+npm i @types/react-transition-group -D

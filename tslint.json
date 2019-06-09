@@ -13,6 +13,7 @@
         "no-console":false,
         "ordered-imports":false,
         "object-literal-sort-keys":false,
+        "jsx-no-lambda":false
     },
     "rulesDirectory": []
 }
