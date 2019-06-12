@@ -2,9 +2,10 @@ import React from 'react';
 
 import Tabs from '../components/Tabs';
 import { IProduct } from '../data/ProductsData';
+import withLoader from './withLoader';
 
-interface IProps {
-    product: IProduct;
+export interface IProps {
+    product?: IProduct;
     inBasket: boolean;
     onAddToBasket: () => void;
 }
@@ -12,6 +13,9 @@ const Product: React.SFC<IProps> = props => {
     const { product } = props;
     const handleAddClick = () => {
         props.onAddToBasket();
+    }
+    if(!product){
+        return null;
     }
     return <React.Fragment>
         <h1>{product.name}</h1>
@@ -29,9 +33,6 @@ const Product: React.SFC<IProps> = props => {
             </Tabs.Tab>
 
         </Tabs>
-
-        <p>{product.description}</p>
-
         <p className="product-price">
             {new Intl.NumberFormat("en-US", {
                 currency: "USD", style: "currency"
@@ -42,5 +43,5 @@ const Product: React.SFC<IProps> = props => {
     </React.Fragment>
 }
 
-export default Product;
+export default withLoader(Product) ;
 

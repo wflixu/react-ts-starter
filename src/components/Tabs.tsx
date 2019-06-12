@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+import { log } from 'util';
 
 
 interface ITabProps {
@@ -13,39 +14,41 @@ interface IState {
 
 interface ITabsContext {
     activeName?: string;
-    handleTabClick?: (name: string) => void
+    handleTabClick?: (name: string,content:React.ReactNode) => void
 }
 const TabsContext = React.createContext<ITabsContext>({});
 class Tabs extends React.Component<{}, IState>{
     public static Tab: React.SFC<ITabProps> = props => {
-
         return (
-            <TabsContext.Consumer> {
-                (context: ITabsContext) => {
-                    if (!context.activeName && props.initialActive) {
+            <TabsContext.Consumer> 
+            {(context: ITabsContext) => {
+                   if (!context.activeName && props.initialActive) {
+                      
                         if (context.handleTabClick) {
                             context.handleTabClick(props.name, props.children);
                             return null;
                         }
                     }
                     const activeName = context.activeName ? context.activeName : props.initialActive ? props.name : "";
-                    return    (<li onClick={handleTabClick}
+                    const handleTabClick = (e:React.MouseEvent<HTMLElement>)=>{
+                        if(context.handleTabClick){
+                            context.handleTabClick(props.name,props.children);
+                        }
+                    };
+                 
+                    return  (<li onClick={handleTabClick}
                         className={props.name === activeName ? "active" : ""}  >
-                        {props.heading()}  </li>) 
+                        {props.heading()}</li>) ;
                 }}
-            
-            </TabsContext.Consumer>
-
-        )
+            </TabsContext.Consumer>);
     }
 
  
     public constructor(props: {}) {
         super(props);
         this.state = {
-            activeName: 'Description',
+            activeName: '',
             activeContent: null
-
         };
     }
     public render() {
@@ -59,14 +62,12 @@ class Tabs extends React.Component<{}, IState>{
                 <ul className="tabs">
                     {this.props.children}
                 </ul>
-                <div>{this.state && this.state.activeContent}</div>
-            </TabsContext.Provider>
-
-        );
+                <div>{this.state && this.state.activeContent}</div> 
+            </TabsContext.Provider>);
     }
-    
-    private handleTabClick = (name: string, content: React.ReactNode) => {
 
+    private handleTabClick = (name: string,content:React.ReactNode) => {
+        
         this.setState({
             activeName: name,
             activeContent: content,
