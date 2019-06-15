@@ -27,6 +27,7 @@ const Header: React.SFC<RouteComponentProps> = (props) => {
             <nav>
                 <NavLink to="/products" className="header-link" activeClassName="header-link-active">Products</NavLink>
                 <NavLink to="/admin" className="header-link" activeClassName="header-link-active">Admin</NavLink>
+                <NavLink to="/contactus" className="header-link" activeClassName="header-link-active">Contact Us</NavLink>
             </nav>
         </header>
     )

@@ -7,6 +7,7 @@ import ProductPage from "./pages/ProductPage";
 import Header from "./components/Header";
 import NotFoundPage from './pages/NotFoundPage';
 import LoginPage from './pages/LoginPage';
+import ContactUsPage from './pages/ContactUsPage';
 
 const AdminPage = React.lazy(() => import("./pages/AdminPage"));
 
@@ -22,6 +23,7 @@ const Routes: React.SFC<RouteComponentProps> = (props) => {
                         <Redirect exact={true} from="/" to="/products" />
                         <Route exact={true} path="/products" component={ProductsPage} />
                         <Route path="/products/:id" component={ProductPage} />
+                        <Route path="/contactus" component={ContactUsPage} />
                         <Route path="/admin" component={AdminPage} >
                             {loggedIn ? (
                                 <Suspense fallback={<div className="pagecontainer">Loading...</div>}>
@@ -40,7 +42,7 @@ const Routes: React.SFC<RouteComponentProps> = (props) => {
 const RoutesWrap: React.SFC = () => {
     return (
         <Router>
-            <Route component={Routes}></Route>
+            <Route component={Routes}/>
         </Router>
     )
 }
