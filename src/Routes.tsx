@@ -17,8 +17,7 @@ const Routes: React.SFC<RouteComponentProps> = (props) => {
     return (
         <div>
             <Header />
-            <TransitionGroup>
-                <CSSTransition key={props.location.key} timeout={500} classNames="animate"    >
+         
                     <Switch>
                         <Redirect exact={true} from="/" to="/products" />
                         <Route exact={true} path="/products" component={ProductsPage} />
@@ -34,8 +33,7 @@ const Routes: React.SFC<RouteComponentProps> = (props) => {
                         <Route path="/login" component={LoginPage} />
                         <Route component={NotFoundPage} />
                     </Switch>
-                </CSSTransition>
-            </TransitionGroup>
+            
         </div>
     );
 };

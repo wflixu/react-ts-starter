@@ -48,3 +48,9 @@ npm i url-search-params-polyfill -D
 npm i react-transition-group -S
 
 npm i @types/react-transition-group -D
+
+## chap 8
+
+npm i redux react-redux redux-thunk
+
+npm i @types/react-redux @types/redux-thunk -D
