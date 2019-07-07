@@ -19,7 +19,7 @@ const ContactUs: React.SFC<IProps> = (props) => {
             onSubmit={handleSubmit}
         >
             <Form.Field name="name" label="Your name" />
-            <Form.Field name="email" label="Your email addres " type="Email" />
+            <Form.Field name="email" label="Your email address" type="Email" />
             <Form.Field name="reason" label="Reason you need to contact us" type="Select"
                 options={["Marketing", "Support", "Feedback", "Jobs", "Other"]}
             />

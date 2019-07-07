@@ -8,7 +8,7 @@ module.exports = {
     }, 
     output:{
         path:path.resolve(__dirname,'dist'),
-        filename:'[name].bundle.[hash:4].js'
+        filename:'[name].bundle.[hash:4].js',
     },
     module: {
         rules: [
@@ -27,6 +27,7 @@ module.exports = {
        contentBase: path.resolve(__dirname,'dist'),
        compress:true,
        historyApiFallback:true,
+       
        open:true,
        port:9000
     },

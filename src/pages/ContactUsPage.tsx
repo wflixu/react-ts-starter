@@ -54,6 +54,7 @@ class ContactUsPage extends React.Component<{}, IState>{
     public render() {
         return (
             <div className="page-container">
+                 
                 <h1>Contact Us</h1>
                 <p> If you enter your details we will get back to you as soon as we can.</p>
                 <ContactUs onSubmit={this.handleSubmit} />
